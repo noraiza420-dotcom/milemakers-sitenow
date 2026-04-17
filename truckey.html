@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILEMAKERS LLC | Premier Logistics & Dispatch</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js" crossorigin="anonymous"></script>
+
+    <style>
+        :root { --primary: #0a2342; --accent: #e63946; --light: #f8f9fa; --white: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--light); }
+
+        nav { background: var(--primary); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        nav h1 { font-family: 'Oswald', sans-serif; color: white; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
+        .nav-right { display: flex; align-items: center; gap: 25px; }
+        .nav-links { display: flex; list-style: none; gap: 20px; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        .nav-links a:hover { color: var(--accent); }
+
+        .search-box { position: relative; }
+        .search-box i { position: absolute; left: 12px; top: 10px; color: #666; font-size: 0.8rem; }
+        .search-box input { padding: 8px 15px 8px 35px; border-radius: 20px; border: none; outline: none; width: 180px; }
+
+        .hero { height: 50vh; background: linear-gradient(rgba(10, 35, 66, 0.8), rgba(10, 35, 66, 0.8)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
+        .hero h2 { font-family: 'Oswald', sans-serif; font-size: 3.5rem; margin-bottom: 10px; }
+
+        .fleet-viewer { padding: 60px 5%; text-align: center; background: white; }
+        .viewer-container { width: 100%; max-width: 1000px; height: 500px; margin: 30px auto; background: #f8f9fa; border-radius: 20px; border: 1px solid #ddd; overflow: hidden; }
+        
+        model-viewer { width: 100%; height: 100%; cursor: grab; }
+
+        .services { padding: 60px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 40px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
+
+        .footer-cta { background: var(--primary); color: white; padding: 60px 5%; text-align: center; }
+        .btn { background: var(--accent); color: white; padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 20px; }
+
+        footer { background: #051221; color: gray; padding: 20px; text-align: center; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1><i class="fa-solid fa-truck-moving"></i> MILEMAKERS LLC</h1>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#services"><i class="fa-solid fa-gears"></i> Services</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-phone"></i> Contact</a></li>
+            </ul>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Track Load...">
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h2>MILE AFTER MILE</h2>
+        <p>Premium Logistics & Dispatching Solutions</p>
+    </header>
+
+    <section class="fleet-viewer">
+        <h3><i class="fa-solid fa-cube"></i> Interactive 360° Fleet</h3>
+        <p>Click and drag to rotate the MILEMAKERS yellow carrier.</p>
+        <div class="viewer-container">
+            <model-viewer 
+                src="yellow_semi-truck_with_trailer.glb" 
+                alt="MILEMAKERS Truck" 
+                auto-rotate 
+                camera-controls 
+                shadow-intensity="1.5"
+                camera-orbit="45deg 75deg 15m"
+                min-camera-orbit="auto auto 5m"
+                crossorigin="anonymous">
+            </model-viewer>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="card"><i class="fa-solid fa-box"></i><h4>Shippers</h4><p>Reliable nationwide capacity.</p></div>
+        <div class="card"><i class="fa-solid fa-handshake"></i><h4>Brokers</h4><p>Professional vetted carriers.</p></div>
+        <div class="card"><i class="fa-solid fa-headset"></i><h4>Dispatch</h4><p>24/7 support & optimization.</p></div>
+    </section>
+
+    <section id="contact" class="footer-cta">
+        <h3>Join the MILEMAKERS Network</h3>
+        <p>operations@milemakersllc.com | 1-800-MILE-MAKER</p>
+        <a href="mailto:operations@milemakersllc.com" class="btn">Contact Us</a>
+    </section>
+
+    <footer>&copy; 2026 MILEMAKERS LLC. All Rights Reserved.</footer>
+
+</body>
+</html>
